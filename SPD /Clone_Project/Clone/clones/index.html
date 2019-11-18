@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML Backgorund Color</title>
+  
+  <!-- <title>Bootstrap 4 Example</title> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body>
+<!-- <body style="height:1500px"> -->
+    
+    <nav class="navbar navbar-expand-lg navbar-light p-3">
+        <a class="navbar-brand text-white pl-5" href="#">Spotify</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active pl-5">
+              <a class="nav-link text-white" href="#">Premium <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white pl-5" href="#">Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white pl-5" href="#">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled text-white pl-5" href="#">|</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white pl-5" href="#">Sign up</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white pl-5" href="#">Log in</a>
+                </li>
+          </ul>
+      </nav>
+      
+      <button type="button" class="close">&times;</button>
+
+<div class="bg-main">
+    <div class="bg-main-img"></div>
+  </div>
+
+  <div class="jumbotron" style="background: url(data:image/jpeg;base64,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) no-repeat;background-size:100%;">
+  <div class="container">
+    <div id="carousel-tour" class="carousel slide" data-ride="carousel" data-interval="false">
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-tour" data-slide-to="0" class="active js-button-hero-carousel-dots"></li>
+        <li data-target="#carousel-tour" data-slide-to="1" class="js-button-hero-carousel-dots"></li>
+        <li data-target="#carousel-tour" data-slide-to="2" class="js-button-hero-carousel-dots"></li>
+        <li data-target="#carousel-tour" data-slide-to="3" class="js-button-hero-carousel-dots"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox" style="height: 307px;" style="background-color: blue;"> 
+        <div class="item active text-center">
+          <h1>
+            <span class="text-white">
+             Music for everyone.
+             <p class="h6"> Millions of songs. No credit card needed.</p>
+            </span>
+          </h1>
+          <a href="#" id="get_spotify_button" class="" > Get Spotify Free </a>
+        
+          <!-- <button class="button button4">12px</button>
+          class="text-center text-white text-signup">
+            Or sign up for our <a href="#" class="js-goto-signup">free service</a>.
+          -->
+        </div>   
+        <div class="item">
+          <h1>
+            <!-- <span class="text-white">
+              Play Spotify on PlayStation®.
+            </span> -->
+          </h1>
+
+        </div>
+      </div>
+
+    </body>
+      <!-- Controls -->
+      <a class="left carousel-control js-button-hero-carousel-left-arrow" href="#carousel-tour" data-slide="prev">
+        <span class="icon-prev"></span>
+        <span class="sr-only">
+          Previous
+        </span>
+      </a>
+      <a class="right carousel-control js-button-hero-carousel-right-arrow" href="#carousel-tour" data-slide="next">
+        <span class="icon-next"></span>
+        <span class="sr-only">
+          Next
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark pt-4">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
+  
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+            consectetur
+            adipisicing elit.</p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <hr>
+  
+    <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1">Register for free</h5>
+      </li>
+      <li class="list-inline-item">
+        <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+      </li>
+    </ul>
+    <!-- Call to action -->
+  
+    <hr>
+  
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-1">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    <!-- Social buttons -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+</html>
+
