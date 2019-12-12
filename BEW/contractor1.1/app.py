@@ -1,5 +1,8 @@
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+
+
+
 client = MongoClient()
 db = client.vacation
 vacations = db.vacations
@@ -12,56 +15,68 @@ app = Flask(__name__)
 @app.route('/')
 def vacations_index():
     """Show all vacations."""
-    return render_template('vacations_index.html', vacations=vacations.find())
+    return render_template('index.html', vacations=vacations.find())
 
-@app.route('/playlists/new')
-def playlists_new():
-    """Create a new playlist."""
-    return render_template('playlists_new.html')
+@app.route('/vacations/new')
+def vacations_new():
+    """Create a new vacation."""
+    return render_template('new.html')
 
-
-def video_url_creator(id_lst):
-    videos = []
-
-    for vid_id in id_lst:
-        # We know that embedded YouTube videos always have this format
-        video = 'https://youtube.com/embed/' + str(vid_id)
-        print(video)
-        videos.append(video)
-    return videos
 
 
 # Note the methods parameter that explicitly tells the route that this is a POST
-@app.route('/playlists', methods=['POST'])
-def playlists_submit():
-    """Submit a new playlist."""
-    # Grab the video IDs and make a list out of them
-    video_ids = request.form.get('video_ids').split()
+@app.route('/vacations', methods=['POST'])
+def vacations_submit():
+    """Submit a new vacation."""
+    # Grab the image urls and make a list out of them
+    images = request.form.get('images').split(',')
     # call our helper function to create the list of links
-    videos = video_url_creator(video_ids)
-    playlist = {
+    vacation = {
         'title': request.form.get('title'),
         'description': request.form.get('description'),
-        'videos': videos,
-        'video_ids': video_ids
+        'images': images,
     }
-    playlists.insert_one(playlist)
-    return redirect(url_for('playlists_index'))
+    vacations.insert_one(vacation)
+    return redirect(url_for('vacations_index'))
     
-@app.route('/playlists/<playlist_id>')
-def playlists_show(playlist_id):
+@app.route('/vacations/<vacation_id>')
+def vacations_show(vacation_id):
     """Show a single playlist."""
-    playlist = playlists.find_one({'_id': ObjectId(playlist_id)})
-    return render_template('playlists_show.html', playlist=playlist)
+    vacation = vacations.find_one({'_id': ObjectId(vacation_id)})
+    return render_template('show.html', vacation=vacation)
 
-@app.route('/')
-def playlists_edit(playlist_id):
-    """Show render playlists_edit."""
-    playlist = playlists.find_one({'_id': ObjectId(playlist_id)})
-    return render_template('playlists_show.html', playlist=playlist)
+@app.route('/vacations/<vacation_id>/edit')
+def vacations_edit(vacation_id):
+    """Show render vacait_edit."""
+    vacation= vacations.find_one({'_id': ObjectId(vacation_id)})
+    return render_template('edit.html', vacation=vacation)
+
+@app.route('/vacations/<vacation_id>', methods=['POST'])
+def vacation_update(vacation_id):
+    """Submit an edited vacation."""
+    # Grab the video IDs and make a list out of them
+    images = request.form.get('images').split(',')
+    # call our helper function to create the list of links
+    vacation = {
+        'title': request.form.get('title'),
+        'description': request.form.get('description'),
+        'images': images,
+    }
+
+    vacations.update_one(
+        {'_id': ObjectId(vacation_id)},
+        {'$set': vacation})
+    return redirect(url_for('vacations_show', vacation_id=vacation_id))
+
+@app.route('/vacations/<vacation_id>/delete', methods=['POST'])
+def vacation_delete(vacation_id):
+    """Action to delete a comment."""
+    vacations.delete_one({'_id': ObjectId(vacation_id)})
+    return redirect(url_for('vacations_index'))
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
 
 

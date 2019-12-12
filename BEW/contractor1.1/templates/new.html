@@ -2,32 +2,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/vacations'>
-    <fieldset>
-        <legend>New Vacation</legend>
-        <!-- TITLE -->
-        <p>
-            <label for='vacation-title'>Vacays</label><br>
-            <input id='playlist-title' type='text' name='title' />
-        </p>
-
-        <!-- DESCRIPTION -->
-        <p>
-            <label for='description'>Description`=][';.,</label><br>
-            <input id='description' type='text' name='description' />
-        </p>
-
-        <!-- VIDEO IDS -->
-        <p>
-            <label for='vacations-video-ids'>Videos</label><br>
-            <p>7G9pTbBerB0</p>
-            <textarea id='vacation-video-ids' name='video_ids' rows='3'></textarea>
-        </p>
-    </fieldset>
-
-    <!-- BUTTON -->
-    <p>
-        <button type='submit'>Save Vacations</button>
-    </p>
-</form>
-{% endblock %
+<div class="container">
+    <div class="row justify-content-center p-5">
+        <form method='POST' action='/vacations'>
+            <fieldset>
+                <legend>New Vacation</legend>
+                <!-- TITLE -->
+                <p>
+                    <label for='vacation-title'>Destination</label><br>
+                    <input id='vacation-title' type='text' name='title' />
+                </p>
+        
+                <!-- DESCRIPTION -->
+                <p>
+                    <label for='description'>Activities</label><br>
+                    <input id='description' type='text' name='description' />
+                </p>
+        
+                <!-- VIDEO IDS -->
+                <p>
+                    <label for='vacations-videos'>Images</label>
+                    <p>Use image links</p>
+                    <textarea id='vacation-images' name='images' rows='3'></textarea>
+                </p>
+        
+        
+        
+            </fieldset>
+        
+            <!-- BUTTON -->
+            <p>
+                <button type='submit'>Save</button>
+            </p>
+        </form>        
+    </div>
+</div>
+{% endblock %}
