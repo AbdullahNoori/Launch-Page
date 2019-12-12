@@ -1,0 +1,26 @@
+<fieldset>
+        <legend>{{ title }}</legend>
+        <!-- TITLE -->
+        <p>
+            <label for='vacation-title'>Title</label><br>
+            <input id='vaction-title' type='text' name='title' value='{{ vacation.title }}'/>
+        </p>
+        >
+        <!-- DESCRIPTION -->
+        <p>
+          <label for='description'>Description</label><br>
+          <input id='description' type='text' name='description' value='{{ vacation.description }}' />
+        </p>
+        >
+        <!-- VIDEO IDS -->
+        <p>
+          <label for='vacation_list-video-ids'> Videos </label><br>
+          <p>Add the ID of the videos you want to include in your playlist. Separate with a newline.</p>
+          <textarea id='7G9pTbBerB0' name='video_ids' rows='10'>{{ "\n".join(vacation.video_ids) }}</textarea>
+        </p>
+    </fieldset>
+    
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Save </button>
+    </p>
